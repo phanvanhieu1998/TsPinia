@@ -37,6 +37,12 @@ const router = createRouter({
       meta: { requiresAuth: "ThemLaiXe", layout: menuApplication },
       component: () => import("../views/QuanLyThongTin/LaiXe/index.vue"),
     },
+    {
+      path: "/xx",
+      name: "xx",
+      meta: { requiresAuth: "ThemLaiXe", layout: NotmenuApplication },
+      component: () => import("../views/PageLasles/index.vue"),
+    },
   ],
 });
 

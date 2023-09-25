@@ -1,11 +1,18 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>This is an about page</h1> 
+    {{ hihi }}
     {{ props.foo }}
     <button @click="xxx"></button>
   </div>
 </template>
 <script setup lang="ts">
+import { ref,onMounted } from "vue";
+
+const hihi = ref(null)
+defineExpose({
+ hihi
+})
 const props = defineProps({
   foo: { type: String, required: true },
   bar: Number,

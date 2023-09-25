@@ -1,0 +1,24 @@
+@import "./variables";
+.section1 {
+  color: $primaryColor;
+}
+
+.header {
+  padding-top: 24px;
+  padding-bottom: 40px;
+  &-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  gap: 0 40px;
+  &-link {
+    text-decoration: none;
+  }
+}

@@ -1,92 +1,75 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import { reactive, ref } from "vue";
-import { useLaiXeStore } from "@/stores/laiXe";
-import { mapState, mapActions } from "pinia";
-const laiXeStore = useLaiXeStore();
+<script>
+// import { RouterLink, RouterView } from "vue-router";
+// import { reactive, ref } from "vue";
+// import { useLaiXeStore } from "@/stores/laiXe";
+// import { mapState, mapActions } from "pinia";
+// const laiXeStore = useLaiXeStore();
 
-const LayDanhSachLaiXe = () => {
-  try {
-    const rs = laiXeStore.LayDanhSachLaiXe();
-    console.log("rs", rs);
-  } catch (error) {
-    console.log("error");
-  }
+// const LayDanhSachLaiXe = () => {
+//   try {
+//     const rs = laiXeStore.LayDanhSachLaiXe();
+//     console.log("rs", rs);
+//   } catch (error) {
+//     console.log("error");
+//   }
+// };
+
+// setTimeout(() => {
+//   // laiXeStore.DanhSachLaiXe = [];
+// }, 3000);
+
+// LayDanhSachLaiXe();
+//
+
+export default {
+  beforeMount() {
+    // console.log("this.$el", this.$el);
+  },
+  mounted(){
+    // console.log(' this.$refs', this.$refs.reference.innerHTML = 'xx')
+  },
+  data() {
+    return {
+      val: 0,
+    };
+  },
+  methods: {
+    updateVal() {
+      this.$refs
+    },
+  },
+  beforeUpdate() {
+    console.log("beforeUpdate() val: " + this.val);
+  },
+  updated() {
+    console.log("updated() val: " + this.val);
+  },
+  unmounted() {
+    /* Options API */
+    alert('Component has been');
+  },
 };
-
-setTimeout(() => {
-  // laiXeStore.DanhSachLaiXe = [];
-}, 3000);
-
-LayDanhSachLaiXe();
 </script>
-
 <template>
-  <component :is="$route.meta.layout">
+   <!-- <button ref="reference" @click="updateVal">Click to Change</button> -->
+  <component   :is="$route.meta.layout">
+  
     <router-view />
   </component>
+   <!-- <div class="test">
+      test
+      <div class="test-test2">xxxxxxxxxxxxx</div>
+    </div> -->
 </template>
 
-<style scoped>
-/* header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-} */
-
-/* @media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+<style lang="scss" scoped>
+// @import './assets/style.scss';
+$primaryColor: blue;
+.test{
+  color: $primaryColor;
+  &-test2{
+    color: red
   }
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-} */
 </style>

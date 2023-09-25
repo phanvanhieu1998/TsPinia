@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { ref } from "vue";
+import { ref,onMounted } from "vue";
 import { useAuthStore } from "@/stores/auth";
 import AboutView from "./AboutView.vue";
 const authStore = useAuthStore();
@@ -18,12 +18,18 @@ const login = async () => {
 const change = (value,value2) =>{
   console.log('value',value,value2)
 }
+const child = ref(null)
+onMounted(() => {
+  // child.value will hold an instance of <Child />
+  console.log('child',child._value.hihi = 'xxxxxxxxx')
+})
+
 </script>
 
 <template>
   <main>
     nội dung Home
-    <AboutView :foo="foo" @change="change" />
+    <AboutView ref="child" :foo="foo" @change="change" />
     <button @click="login()">xxxxxxxxxx</button>
   </main>
 </template>
