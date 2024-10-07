@@ -6,12 +6,27 @@
         <el-breadcrumb-item>Danh sách lái xe</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div>xxxxxxxxx</div>
+    {{functionPermissions[role]}} xx
+    <div v-if="functionPermissions[role].ThemLaiXe">xxxxxxxxx</div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ArrowRight } from "@element-plus/icons-vue";
+import { getInfo } from "@/utils/auth.ts";
+ const role = getInfo().role;
+const functionPermissions = {
+  Admin: {
+    ThemLaiXe: true,
+    XoaLaiXe: true,
+    CapNhatLaiXe: true,
+  },
+  User: {
+    ThemLaiXe: false,
+    XoaLaiXe: false,
+    CapNhatLaiXe: true,
+  },
+};
 </script>
 
 <style scoped>
@@ -25,4 +40,3 @@ import { ArrowRight } from "@element-plus/icons-vue";
   padding-left: 20px;
 }
 </style>
->

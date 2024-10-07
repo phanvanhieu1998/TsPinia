@@ -36,6 +36,10 @@ const router = createRouter({
       name: "LaiXe",
       meta: { requiresAuth: "ThemLaiXe", layout: menuApplication },
       component: () => import("../views/QuanLyThongTin/LaiXe/index.vue"),
+      children: [
+        { path: 'ThemLaiXe', component: () => import("../views/AboutView.vue"),},
+  
+      ], 
     },
     {
       path: "/xx",
@@ -49,7 +53,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   if (to.matched.some((record) => record.meta.requiresAuth)) {
     const role = getInfo().role;
-    const listRole = {
+    const listRole: any = {
       Admin: ["ThemLaiXe", "ChiTiet"],
       User: ["ThemLaiXe"],
     };
