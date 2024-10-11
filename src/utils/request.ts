@@ -1,9 +1,11 @@
 import axios from "axios";
 import TokenService from "./token.service"; // Import your token management service
 
-
+import {
+  url
+} from "./constants";
 const HTTP = axios.create({
-  baseURL: "http://10.10.0.199:20000/",
+  baseURL: url,
   // Configure headers here when needed
   headers: {
     Authorization: "Bearer " + TokenService.getLocalAccessToken(),

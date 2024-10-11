@@ -1,7 +1,7 @@
 import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import { LaiXeItem, xxxxxx } from "@/interfaces/LaiXe";
-import LaiXeService from "../api/LaiXeService";
+import LaiXeService from "../api/laiXe/laiXeService";
 // interface LaiXeItem {
 //   hoten: string;
 //   tuoi: number;

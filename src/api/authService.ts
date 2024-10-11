@@ -1,5 +1,5 @@
-import HTTP from "../utils/request";
-import { LoginData } from "../interfaces/auth";
+import HTTP from "@/utils/request";
+import type { LoginData } from "@/interfaces/auth";
 class authService {
   // logIn(data) {
   //   return HTTP.post("/api/Auth/dang-nhap", data, {
@@ -10,7 +10,7 @@ class authService {
     return HTTP.post("/api/Auth/dang-nhap", data);
   }
 
-  xxxx(data) {
+  xxxx(data: any) {
     return HTTP.get("/user/login", {
       // request params /user/login?username=test&password=123
       params: data,

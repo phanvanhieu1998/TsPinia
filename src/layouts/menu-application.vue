@@ -40,9 +40,9 @@
           </el-row>
         </div></el-aside
       >
-      <el-container>
+      <div>
         <slot />
-      </el-container>
+      </div>
     </el-container>
   </div>
 </template>
