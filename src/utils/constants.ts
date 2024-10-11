@@ -3,4 +3,4 @@
 //     VERIFY_EMAIL_TOKEN: "verifyEmailToken",
 //   });
 
-export const url = process.env["VUE_APP_API_URL"] || "http://localhost:3002/api/v1";
+export const url = import.meta.env.VITE_API_URL || "http://localhost:3002/api/v1";

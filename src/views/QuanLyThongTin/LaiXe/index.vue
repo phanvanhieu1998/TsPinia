@@ -57,14 +57,10 @@ import { ref,reactive } from 'vue'
 import UserName from "@/views/AboutView.vue"
 
 const listObj = reactive(
-{
-  a: {
-    b: {
-      first:'jone1',
+  {
+    first:'jone1',
     last: 'doe1'
-    }
-  }
-},
+  },
 )
 const last = ref('Doe')
 </script>
