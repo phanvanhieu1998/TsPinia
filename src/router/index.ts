@@ -15,7 +15,6 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  // Logic kiểm tra quyền truy cập
   if (to.matched.some((record) => record.meta.requiresAuth)) {
     const role = getInfo().role;
     const listRole: any = {
@@ -23,16 +22,23 @@ router.beforeEach((to, from, next) => {
       User: ["ThemLaiXe"],
     };
     if (!getInfo().token && !role) {
-      next({ path: "/login" });
+      next({
+        // Người dùng chưa đăng nhập, chuyển hướng đến trang đăng nhập
+        path: "/login",
+        // query: { redirect: to.fullPath }
+      });
     } else if (
       to.meta.requiresAuth &&
       !listRole[getInfo().role].includes(to.meta.requiresAuth)
     ) {
+      // 如果没有权限，则进入403
       next("/403");
     } else {
+      // Người dùng đã đăng nhập, cho phép truy cập
       next();
     }
   } else {
+    // Route không yêu cầu xác thực, cho phép truy cập
     next();
   }
 });
