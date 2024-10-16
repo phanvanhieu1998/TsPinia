@@ -62,15 +62,18 @@ const listObj = reactive(
     last: 'doe1'
   },
 )
+const obj = reactive({
+  userName: "UserName"
+})
 const last = ref('Doe')
 </script>
 
 <template>
-  <h1>{{ listObj }}</h1>
+<UserName.name/>
   <!-- <div v-for="(item, index) in listObj" :key="index"> -->
-    <UserName
+    <!-- <UserName
       v-model:list-obj="listObj"
-    />
+    /> -->
   <!-- </div> -->
 
     <!-- v-model:last-name="last" -->

@@ -16,6 +16,7 @@
     "esModuleInterop": false,
     "types": ["node"],
     "allowImportingTsExtensions": false,
+    "skipLibCheck": true
    
   },
   "include": [

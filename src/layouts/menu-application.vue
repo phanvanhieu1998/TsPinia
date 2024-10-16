@@ -42,6 +42,8 @@
       >
       <div>
         <slot />
+        xx {{ xxx }}
+        {{ yyy }}
       </div>
     </el-container>
   </div>
@@ -49,6 +51,9 @@
 
 <script lang="ts" setup>
 import { Document, Menu as IconMenu, Location, Setting } from "@element-plus/icons-vue";
+import { computed } from "vue";
+import { useStore } from "vuex";
+const store = useStore()
 const listMenu = [
   {
     text: "Quản xx",
@@ -81,6 +86,10 @@ const listMenu = [
     route: "/",
   },
 ];
+const xxx = computed(() => store.state.authentication.menuLoading);
+const yyy = computed(() => store.getters['authentication/haha'])
+//  store.commit("authentication/SET_TEST")
+const gettersFilter = computed(() => store.getters['authentication/haha']("Heu"))
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
 };
